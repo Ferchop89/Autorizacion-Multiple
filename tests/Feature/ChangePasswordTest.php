@@ -12,6 +12,7 @@ class ChangePasswordTest extends TestCase
     /** @test */
     function it_shows_the_page_to_authenticated_users()
     {
+        $this->markTestIncomplete();
         $user = factory(User::class)->create();
         $this->actingAs($user)
             ->get(route('change_password'))
