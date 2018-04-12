@@ -20,6 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/change-password', 'HomeController@changePassword')->name('change_password');
 
-Route::get('/admin', function () {
-    return view('/admin/dashboard');
-})->name('admin_dashboard')->middleware(['auth', 'admin']);
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function (){
+    require __DIR__ . '/admin.php';
+});
