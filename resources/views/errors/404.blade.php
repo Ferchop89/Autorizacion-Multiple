@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <hi>Página no encontrada</hi>
+    <h1>Página no encontrada</h1>
 </body>
 </html>
