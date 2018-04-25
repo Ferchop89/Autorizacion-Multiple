@@ -17,9 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/change-password', 'HomeController@changePassword')->name('change_password');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth:web,admin');
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function (){
-    require __DIR__ . '/admin.php';
-});
+// Admin Login
+Route::get('admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'Admin\LoginController@login');
+Route::post('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
+
+
+

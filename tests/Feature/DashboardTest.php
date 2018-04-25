@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\User;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DashboardTest extends TestCase
@@ -12,17 +11,30 @@ class DashboardTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    function it_shows_the_dashboard_page_to_authenticated_users(){
-        $user = factory(User::class)->create();
+    function it_shows_the_dashboard_page_to_authenticated_users()
+    {
+        $this->withoutExceptionHandling();
 
-        $this->actingAs($user) //Actuar como este usuario
+        $this->actingAsUser()
             ->get(route('home'))
-            ->assertSee('Dashboard')
-            ->assertStatus(200);
+            ->assertStatus(200)
+            ->assertSee('Dashboard');
     }
 
     /** @test */
-    function it_redirects_guest_users_to_the_login_page(){
+    function it_shows_the_dashboard_page_to_admins()
+    {
+        $this->withoutExceptionHandling();
+
+        $this->actingAsAdmin()
+            ->get(route('home'))
+            ->assertStatus(200)
+            ->assertSee('Dashboard');
+    }
+    
+    /** @test */
+    function it_redirects_guest_users_to_the_login_page()
+    {
         $this->get(route('home'))
             ->assertStatus(302)
             ->assertRedirect('login');

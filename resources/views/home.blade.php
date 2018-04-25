@@ -17,7 +17,9 @@
                     You are logged in!
 
                     @admin
-                        <a href="{{ route('admin_dashboard') }}">Ir al admin</a>
+                        <a href="{{ route('admin_dashboard') }}">
+                            Ir al admin
+                        </a>
                     @endadmin
                 </div>
             </div>

@@ -27,13 +27,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
     protected $casts = [
-        'admin' => 'boolean',
+        'admin' => 'boolean'
     ];
 
-    public function isAdmin(){
-        return $this->admin;
-        // return false;
+    public function isAdmin()
+    {
+        return false;
     }
 }

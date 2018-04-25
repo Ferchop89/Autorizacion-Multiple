@@ -23,11 +23,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-        Route::macro('catch', function($action){
-            $this->any('{anything}', $action)
-                ->where('anything', '.*')
-                ->fallback();
+        Route::macro('catch', function ($action) {
+           $this->any('{anything}', $action)
+               ->where('anything', '.*')
+               ->fallback();
         });
 
         parent::boot();
@@ -63,33 +62,34 @@ class RouteServiceProvider extends ServiceProvider
              ->group(base_path('routes/web.php'));
     }
 
-    // /**
-    //  * Define the "api" routes for the application.
-    //  *
-    //  * These routes are typically stateless.
-    //  *
-    //  * @return void
-    //  */
-    // protected function mapApiRoutes()
-    // {
-    //     Route::prefix('api')
-    //          ->middleware('api')
-    //          ->namespace($this->namespace)
-    //          ->group(base_path('routes/api.php'));
-    // }
-
     /**
      * Define the "admin" routes for the application.
      *
-     * These routes all receive session state, CSRF protection, require authemtication and an admin user
+     * These routes all receive session state, CSRF protection,
+     * require authentication and an admin user, etc.
      *
      * @return void
      */
     protected function mapAdminRoutes()
     {
-        Route::middleware(['web', 'auth', 'admin'])
-             ->namespace($this->namespace)
-             ->prefix('/admin')
-             ->group(base_path('routes/admin.php'));
+        Route::middleware(['web', 'auth:admin'])
+            ->namespace($this->namespace.'\Admin')
+            ->prefix('/admin')
+            ->group(base_path('routes/admin.php'));
     }
+
+//    /**
+//     * Define the "api" routes for the application.
+//     *
+//     * These routes are typically stateless.
+//     *
+//     * @return void
+//     */
+//    protected function mapApiRoutes()
+//    {
+//        Route::prefix('api')
+//             ->middleware('api')
+//             ->namespace($this->namespace)
+//             ->group(base_path('routes/api.php'));
+//    }
 }
