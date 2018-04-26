@@ -1,6 +1,6 @@
 ### [Styde](https://styde.net/)
 
-Styde es una nueva comunidad de desarrollo web en español. Con nosotros podrás aprender Laravel, PHP y otras tecnologías, 
+Styde es una nueva comunidad de desarrollo web en español. Con nosotros podrás aprender Laravel, PHP y otras tecnologías,
 desde tutoriales básicos gratuitos hasta cursos avanzados a bajo costo, de la mano de profesionales con años de experiencia.
 
 # Técnicas de autorización con Laravel
@@ -8,12 +8,12 @@ desde tutoriales básicos gratuitos hasta cursos avanzados a bajo costo, de la m
 En este curso te enseñaré diversas técnicas que puedes utilizar para restringir el acceso a ciertas secciones de tu aplicación
 a diferentes usuarios dependiendo de su rol o estatus en el sistema.
 
-Este curso lo abordaré desde lo más básico hasta sistemas de autorización más complicados con roles y permisos dinámicos. 
-Comenzaremos con los componentes de autorización que ya incluye Laravel por defecto (por ejemplo los Middleware) y 
-culminaremos el curso revisando algunos de los componentes de autorización más populares en el ecosistema de Laravel. 
-También tendremos la oportunidad de crear nuestras propias clases personalizadas de autorización (cuya lógica podrás 
-adaptar para cada proyecto), aprenderás cómo restringir ciertas áreas de tus vistas, evitar la duplicación del código y 
-mucho más. Por supuesto para garantizar la calidad de nuestra aplicación estaremos escribiendo y utilizando pruebas 
+Este curso lo abordaré desde lo más básico hasta sistemas de autorización más complicados con roles y permisos dinámicos.
+Comenzaremos con los componentes de autorización que ya incluye Laravel por defecto (por ejemplo los Middleware) y
+culminaremos el curso revisando algunos de los componentes de autorización más populares en el ecosistema de Laravel.
+También tendremos la oportunidad de crear nuestras propias clases personalizadas de autorización (cuya lógica podrás
+adaptar para cada proyecto), aprenderás cómo restringir ciertas áreas de tus vistas, evitar la duplicación del código y
+mucho más. Por supuesto para garantizar la calidad de nuestra aplicación estaremos escribiendo y utilizando pruebas
 automatizadas con PHPUnit y TDD según convenga.
 
 ## Lecciones

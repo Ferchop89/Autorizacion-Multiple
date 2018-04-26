@@ -28,6 +28,7 @@ abstract class TestCase extends BaseTestCase
         return $this->actingAs($user);
     }
 
+
     protected function createAdmin(array $attributes = [])
     {
         return factory(Admin::class)->create($attributes);
