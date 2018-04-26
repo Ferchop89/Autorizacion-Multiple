@@ -31,7 +31,7 @@ class DashboardTest extends TestCase
             ->assertStatus(200)
             ->assertSee('Dashboard');
     }
-    
+
     /** @test */
     function it_redirects_guest_users_to_the_login_page()
     {

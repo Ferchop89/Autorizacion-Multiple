@@ -6,6 +6,7 @@ use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+
 class AdminEventsTest extends TestCase
 {
     use RefreshDatabase;
